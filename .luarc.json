@@ -1,0 +1,43 @@
+{
+	"addonManage.enable": false,
+	"completion": {
+		"autoRequire": true,
+		"callSnippet": "Disable",
+		"displayContext": 1,
+		"enable": true,
+		"keywordSnippet": "Both",
+		"postfix": "@",
+		"requireSeparator": ".",
+		"showParams": true,
+		"showWord": "Fallback",
+		"workspaceWord": true
+	},
+	"diagnostics": {
+		"enable": true,
+		"disable": [
+			"lowercase-global"
+		],
+		"globals": [
+			"vim"
+		]
+	},
+	"hint": {
+		"enable": true
+	},
+	"runtime": {
+		"version": "LuaJIT"
+	},
+	"workspace": {
+		"checkThirdParty": false,
+		"library": [
+			"/Users/mariano/.config/nvim",
+			"/Users/mariano/.local/share/nvim/site",
+			"/Users/mariano/.local/share/nvim/site/pack/catppuccin/start/nvim",
+			"/opt/homebrew/Cellar/neovim/0.10.3/share/nvim/runtime",
+			"/opt/homebrew/Cellar/neovim/0.10.3/share/nvim/runtime/pack/dist/opt/matchit",
+			"/opt/homebrew/Cellar/neovim/0.10.3/lib/nvim",
+			"/Users/mariano/.local/share/nvim/site/pack/catppuccin/start/nvim/after"
+		]
+	}
+}
+
