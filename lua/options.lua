@@ -35,5 +35,5 @@ vim.o.foldmethod = 'syntax'
 vim.o.foldenable = true
 vim.o.foldlevel = 3
 vim.o.foldcolumn = '1'
-vim.o.fillchars = 'fold: ,foldopen:,foldclose:,foldsep:▎'
+vim.o.fillchars = 'fold: ,foldopen:+,foldclose:-,foldsep:▎'
 vim.o.laststatus = 3

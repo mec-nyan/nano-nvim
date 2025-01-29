@@ -66,7 +66,7 @@ function make_callback_down(timer, amount)
 	return function()
 		local pos = vim.fn.winline()
 		local off = vim.wo.scrolloff
-		if start == amount or off+1 == pos then
+		if start == amount or off + 1 == pos then
 			timer:stop()
 			timer:close()
 			return

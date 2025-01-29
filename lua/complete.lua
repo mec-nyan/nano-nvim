@@ -1,8 +1,8 @@
-local cmp = require'cmp'
+local cmp = require 'cmp'
 
 cmp.setup({
 	snippet = {
-		expand = function (args)
+		expand = function(args)
 			vim.fn['vsnip#anonymous'](args.body)
 		end,
 	},
@@ -21,5 +21,6 @@ cmp.setup({
 		{ name = 'nvim_lsp' },
 		{ name = 'buffer' },
 		{ name = 'vsnip' },
+		{ name = 'path' },
 	}),
 })
