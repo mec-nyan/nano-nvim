@@ -15,3 +15,7 @@ require "lspconfig".rust_analyzer.setup{
 require "lspconfig".clangd.setup{
 	capabilities = cap
 }
+
+require "lspconfig".pylsp.setup{
+	capabilities = cap
+}

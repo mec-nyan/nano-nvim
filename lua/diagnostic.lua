@@ -1,6 +1,7 @@
 --- Dignostics configuration.
 
 vim.diagnostic.config({
+	float = { border = 'rounded' },
 	virtual_text = false,
 	signs = {
 		text = {
