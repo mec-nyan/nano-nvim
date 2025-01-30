@@ -1,0 +1,3 @@
+-- TODO: Rewrite blame me!
+-- I've written a simple plugin to show in a popup/notification
+-- the author of the line. I've lost it when I formatted my computer...
