@@ -39,6 +39,12 @@ local keybindings = {
 			cmd = ':tabclose<CR>',
 			opts = { desc = 'Nano::CloseTab' }
 		},
+		-- NvimTree
+		{
+			key = '<leader>nt',
+			cmd = '<cmd>NvimTreeToggle<CR>',
+			opts = { desc = 'Nano::NvimTreeToggle' },
+		},
 		-- LSP
 		{
 			key = 'K',
@@ -109,6 +115,22 @@ local keybindings = {
 			key = '[d',
 			cmd = ':lua vim.diagnostic.goto_prev()<CR>',
 			opts = { desc = 'Nano::Diagnostic previous' }
+		},
+		-- Telescope
+		{
+			key = '<leader>sf',
+			cmd = '<CMD>Telescope find_files<CR>',
+			opts = { desc = 'Nano::Find files' }
+		},
+		{
+			key = '<leader>sg',
+			cmd = '<CMD>Telescope live_grep<CR>',
+			opts = { desc = 'Nano::Live grep' }
+		},
+		{
+			key = '<leader>sd',
+			cmd = '<CMD>Telescope diagnostics<CR>',
+			opts = { desc = 'Nano::Diagnostics' }
 		},
 		-- DAP
 		{
