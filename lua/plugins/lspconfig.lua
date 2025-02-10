@@ -16,7 +16,11 @@ return {
 		}
 
 		require "lspconfig".clangd.setup {
-			capabilities = cap
+			capabilities = cap,
+			cmd = {
+				"clangd",
+				"--enable-config",
+			},
 		}
 
 		require "lspconfig".pylsp.setup {
