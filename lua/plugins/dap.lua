@@ -1,5 +1,5 @@
 return {
-	'mfussenegger/nvim-dap',
+	"mfussenegger/nvim-dap",
 	{
 		"rcarriga/nvim-dap-ui",
 		dependencies = {
@@ -19,29 +19,35 @@ return {
 
 			dap.configurations.cpp = {
 				{
-					name = "Debug",
+					name = "Debug " .. vim.fn.expand("%:r") .. ".o",
 					type = "lldb",
 					request = "launch",
-					program = function()
-						return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
-					end,
-					cwd = '${workspaceFolder}',
+					program = "${fileBasenameNoExtension}.o",
+					cwd = "${workspaceFolder}",
 					stopOnEntry = false,
 					args = {},
 				},
 				{
-					name = "Dummy",
-				}
+					name = "Selece executable",
+					type = "lldb",
+					request = "launch",
+					program = function()
+						return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
+					end,
+					cwd = "${workspaceFolder}",
+					stopOnEntry = false,
+					args = {},
+				},
 			}
 
 			dap.configurations.c = dap.configurations.cpp
 			dap.configurations.rust = dap.configurations.cpp
-		end
+		end,
 	},
 	{
-		'leoluz/nvim-dap-go',
+		"leoluz/nvim-dap-go",
 		config = function()
 			require("dap-go").setup()
-		end
+		end,
 	},
 }

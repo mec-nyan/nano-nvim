@@ -18,6 +18,6 @@ Installing only the plugins I need.
 require "config.options"
 require "config.lazy"
 require "config.keymaps"
-require "config.diagnostic"
+require "config.icons"
 require "config.kind"
 require "nano.smooth".setup()
