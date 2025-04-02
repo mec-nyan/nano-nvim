@@ -134,14 +134,44 @@ local keybindings = {
 		},
 		-- DAP
 		{
-			key = '<leader>,',
+			key = '<leader>dc',
 			cmd = ':lua require("dap").continue()<CR>',
 			opts = { desc = 'Nano::Dap Continue' }
 		},
 		{
-			key = '<leader>t',
+			key = '<leader>dt',
 			cmd = ':lua require("dap").toggle_breakpoint()<CR>',
 			opts = { desc = 'Nano::Dap Toggle Breakpoint' }
+		},
+		{
+			key = '<leader>do',
+			cmd = ':lua require("dap").step_over()<CR>',
+			opts = { desc = 'Nano::Dap Step Over' }
+		},
+		{
+			key = '<leader>di',
+			cmd = ':lua require("dap").step_into()<CR>',
+			opts = { desc = 'Nano::Dap Step Into' }
+		},
+		{
+			key = '<leader>dh',
+			cmd = ':lua require("dap.ui.widgets").hover()<CR>',
+			opts = { desc = 'Nano::Dap Widgets::hover' }
+		},
+		{
+			key = '<leader>dp',
+			cmd = ':lua require("dap.ui.widgets").preview()<CR>',
+			opts = { desc = 'Nano::Dap Widgets::preview' }
+		},
+		{
+			key = '<leader>df',
+			cmd = ':lua require("dap.ui.widgets").widgets.centered_float(widgets.frames)<CR>',
+			opts = { desc = 'Nano::Dap Widgets::frames' }
+		},
+		{
+			key = '<leader>ds',
+			cmd = ':lua require("dap.ui.widgets").widgets.centered_float(widgets.scopes)<CR>',
+			opts = { desc = 'Nano::Dap Widgets::scopes' }
 		},
 		-- Dap UI
 		{

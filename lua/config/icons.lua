@@ -25,4 +25,37 @@ vim.diagnostic.config({
 	},
 })
 
+local def_sign = vim.fn.sign_define
+
+def_sign('DapBreakpoint', {
+	text = ' ',
+	texthl = 'WarningMsg',
+	linehl = '',
+	numhl = '',
+})
+def_sign('DapBreakpointCondition', {
+	text = ' ',
+	texthl = 'Character',
+	linehl = '',
+	numhl = ''
+})
+def_sign('DapLogPoint', {
+	text = ' ',
+	texthl = 'Character',
+	linehl = '',
+	numhl = ''
+})
+def_sign('DapStopped', {
+	text = ' ',
+	texthl = 'ErrorMsg',
+	linehl = '',
+	numhl = ''
+})
+def_sign('DapBreakpointRejected', {
+	text = ' ',
+	texthl = 'ErrorMsg',
+	linehl = '',
+	numhl = ''
+})
+
 return {}
