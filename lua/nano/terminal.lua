@@ -57,11 +57,18 @@ end
 
 -- Toggle our terminal window.
 local toggle_terminal = function()
+	-- If the window doesn't exist, create it.
 	if not vim.api.nvim_win_is_valid(state.floating.win) then
 		state.floating = create_floating_window()
+		-- If the buffer doesn't exist, create it.
 		if vim.bo[state.floating.buf].buftype ~= "terminal" then
 			vim.cmd.terminal()
 		end
+		-- I want to be in insert-mode (terminal-mode) every time a enter a term buffer.
+		-- You may want something different.
+		-- I'm not using an autocmd with event "TermOpen" because I want to enter insert-mode
+		-- every time I show this window. Since the term buffer will remain the same, the autocmd
+		-- will run only the first time.
 		vim.defer_fn(function()
 			local mode = vim.api.nvim_get_mode().mode
 			if mode == "n" or mode == "nt" then
@@ -74,13 +81,12 @@ local toggle_terminal = function()
 end
 
 term.setup = function()
+	-- Quickly exit insert mode in terminal-mode.
+	vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>")
+
+	-- Create a command to show/hide the terminal.
 	vim.api.nvim_create_user_command("Floaterminal", toggle_terminal, {})
 
-	-- TODO: When not in ~, bash doesn't read the configuration files.
-	-- vim.opt.shell = "/opt/homebrew/bin/bash"
-	-- vim.opt.shellcmdflag = "--login --rcfile ~/.bashrc"
-
-	vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>")
 	vim.keymap.set({ "n", "t" }, "<leader>tt", toggle_terminal)
 end
 
