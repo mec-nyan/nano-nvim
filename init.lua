@@ -21,3 +21,4 @@ require "config.keymaps"
 require "config.icons"
 require "config.kind"
 require "nano.smooth".setup()
+require "nano.terminal".setup()
