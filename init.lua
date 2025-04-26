@@ -20,5 +20,6 @@ require "config.lazy"
 require "config.keymaps"
 require "config.icons"
 require "config.kind"
+require "config.startup"
 require "nano.smooth".setup()
 require "nano.terminal".setup()
