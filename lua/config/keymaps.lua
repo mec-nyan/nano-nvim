@@ -6,7 +6,7 @@
 local setkey = vim.keymap.set
 
 -- TODO: These function should not be here.
-function toggle_scopes()
+local function toggle_scopes()
 	local win_height = vim.api.nvim_win_get_height(0)
 	local split_height = math.floor(win_height / 3)
 	local widgets = require "dap.ui.widgets"
@@ -16,7 +16,7 @@ function toggle_scopes()
 	end
 end
 
-function toggle_frames()
+local function toggle_frames()
 	local win_width = vim.api.nvim_win_get_width(0)
 	local split_width = math.floor(win_width / 4)
 	local widgets = require "dap.ui.widgets"
@@ -26,14 +26,14 @@ function toggle_frames()
 	end
 end
 
-function toggle_repl()
+local function toggle_repl()
 	local win_height = vim.api.nvim_win_get_height(0)
 	local split_height = math.floor(win_height / 4)
 	local dap = require "dap"
 	dap.repl.toggle({ height = split_height }, 'belowright split')
 end
 
-function show_breakpoints()
+local function show_breakpoints()
 	require "dap".list_breakpoints()
 	vim.cmd ":copen"
 end
@@ -109,6 +109,11 @@ local keybindings = {
 			key = "<leader>nt",
 			cmd = "<cmd>NvimTreeToggle<CR>",
 			opts = { desc = "Nano::NvimTreeToggle" },
+		},
+		{
+			key = "<leader>nf",
+			cmd = "<cmd>NvimTreeFindFile<CR>",
+			opts = { desc = "Nano::NvimTreeFindFile" },
 		},
 		-- LSP
 		{
@@ -285,11 +290,22 @@ local keybindings = {
 			cmd = ':lua require("dapui").toggle()<CR>',
 			opts = { desc = "Nano::DapUI Toggle" },
 		},
+		-- Zen
+		{
+			key = "<leader>zz",
+			cmd = ":ZenMode<CR>",
+			opts = { desc = "Nano::Zen mode" },
+		},
 		-- Other
 		{
 			key = "<leader><esc>",
 			cmd = ":nohlsearch<CR>",
 			opts = { desc = "Nano::Clear search" },
+		},
+		{
+			key = "<leader>ss",
+			cmd = ":suspend<CR>",
+			opts = { desc = "Nano::Suspend" },
 		},
 	},
 	insert = {
