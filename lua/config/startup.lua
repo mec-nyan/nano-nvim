@@ -52,6 +52,7 @@ local startup = function()
 		local u_ccolumn = vim.api.nvim_get_option_value('colorcolumn', {})
 		local u_number = vim.api.nvim_get_option_value('number', {})
 		local u_relnumber = vim.api.nvim_get_option_value('relativenumber', {})
+		print("cc:", u_ccolumn, "ln:", u_number, "rn:", u_relnumber)
 
 		-- Don't show these on the welcome screen.
 		vim.api.nvim_set_option_value('colorcolumn', '', {})
@@ -118,11 +119,12 @@ local startup = function()
 		)
 
 		-- Make sure to restore them later.
-		vim.api.nvim_create_autocmd("BufNewFile", {
+		vim.api.nvim_create_autocmd("BufReadPre", {
 			once = true,
 			callback = function()
+				print "Ima run!"
 				vim.api.nvim_win_set_hl_ns(0, 0)
-				vim.api.nvim_set_option_value('colorcolumn', u_ccolumn {})
+				vim.api.nvim_set_option_value('colorcolumn', u_ccolumn, {})
 				vim.api.nvim_set_option_value('number', u_number, {})
 				vim.api.nvim_set_option_value('relativenumber', u_relnumber, {})
 			end
