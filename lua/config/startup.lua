@@ -119,10 +119,9 @@ local startup = function()
 		)
 
 		-- Make sure to restore them later.
-		vim.api.nvim_create_autocmd("BufReadPre", {
+		vim.api.nvim_create_autocmd("BufReadPost", {
 			once = true,
 			callback = function()
-				print "Ima run!"
 				vim.api.nvim_win_set_hl_ns(0, 0)
 				vim.api.nvim_set_option_value('colorcolumn', u_ccolumn, {})
 				vim.api.nvim_set_option_value('number', u_number, {})

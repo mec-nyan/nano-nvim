@@ -80,14 +80,14 @@ return {
 					program = './${relativeFileDirname}',
 				},
 				{
-					type = 'delve',
+					type = 'go',
 					name = 'nano::debug test',
 					mode = 'test',
 					request = 'launch',
 					program = '${file}',
 				},
 				{
-					type = 'delve',
+					type = 'go',
 					name = 'nano::debug test (go.mod)',
 					mode = 'test',
 					request = 'launch',
