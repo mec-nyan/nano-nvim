@@ -186,6 +186,11 @@ local keybindings = {
 			cmd = ":lua vim.diagnostic.goto_prev()<CR>",
 			opts = { desc = "Nano::Diagnostic previous" },
 		},
+		{
+			key = "<leader>ih",
+			cmd = ":lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({bufnr=0}), {bufnr=0})<CR>",
+			opts = { desc = "Nano::Toggle inlay hints" },
+		},
 		-- Telescope
 		{
 			key = "<leader>sf",
