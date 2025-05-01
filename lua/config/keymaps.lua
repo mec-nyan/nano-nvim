@@ -38,6 +38,14 @@ local function show_breakpoints()
 	vim.cmd ":copen"
 end
 
+local function toggle_virtual_text()
+	vim.diagnostic.config({ virtual_text = not vim.diagnostic.config().virtual_text })
+end
+
+local function toggle_virtual_lines()
+	vim.diagnostic.config({ virtual_lines = not vim.diagnostic.config().virtual_lines })
+end
+
 -- TODO: Check that we don't clash with some plugin's keymaps (i.e. lspconfig).
 local keybindings = {
 	normal = {
@@ -114,6 +122,16 @@ local keybindings = {
 			key = "<leader>td",
 			cmd = ":lua vim.diagnostic.enable(not vim.diagnostic.is_enabled())<CR>",
 			opts = { desc = "Nano::Toggle diagnostics" },
+		},
+		{
+			key = "<leader>tv",
+			cmd = toggle_virtual_text,
+			opts = { desc = "Nano::Toggle diagnostics virtual text" },
+		},
+		{
+			key = "<leader>tl",
+			cmd = toggle_virtual_lines,
+			opts = { desc = "Nano::Toggle diagnostics virtual lines" },
 		},
 		-- NvimTree
 		{
