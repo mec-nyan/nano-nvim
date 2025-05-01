@@ -104,6 +104,17 @@ local keybindings = {
 			cmd = ":cclose<CR>",
 			opts = { desc = "Nano::Close QuickFix window" },
 		},
+		-- Diagnostic (i.e. linting)
+		{
+			key = "<leader>cd",
+			cmd = ":lua vim.diagnostic.setqflist()<CR>",
+			opts = { desc = "Nano::Diagnostics in QF window" },
+		},
+		{
+			key = "<leader>td",
+			cmd = ":lua vim.diagnostic.enable(not vim.diagnostic.is_enabled())<CR>",
+			opts = { desc = "Nano::Toggle diagnostics" },
+		},
 		-- NvimTree
 		{
 			key = "<leader>nt",
