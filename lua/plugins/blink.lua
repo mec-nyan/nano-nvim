@@ -16,8 +16,8 @@ return {
 				draw = {
 					components = {
 						kind_icon = {
-							text = function (ctx)
-								local my_kind = require"config.kind".MyKind
+							text = function(ctx)
+								local my_kind = require "config.kind".MyKind
 								return " " .. my_kind[ctx.kind] .. ctx.icon_gap .. " "
 							end
 						},
