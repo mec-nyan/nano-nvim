@@ -25,8 +25,12 @@ return {
 	-- <<< Added for lazydev. [end]
 	config = function()
 		local cmp = require 'cmp'
+		local my_kind = require "config.kind".MyKind
 
 		cmp.setup({
+			view = {
+				entries = "custom",
+			},
 			snippet = {
 				expand = function(args)
 					vim.fn['vsnip#anonymous'](args.body)
@@ -63,6 +67,7 @@ return {
 			}),
 			formatting = {
 				format = function(_, vim_item)
+					vim_item.kind = my_kind[vim_item.kind] or vim_item.kind
 					vim_item.menu = ""
 					return vim_item
 				end

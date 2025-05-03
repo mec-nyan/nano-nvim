@@ -1,5 +1,7 @@
 --- LSP Completion kind.
 
+local M = {}
+
 local kind = vim.lsp.protocol.CompletionItemKind
 
 -- I am not particularly a fan of icons for "everything".
@@ -42,6 +44,12 @@ local my_kind = {
 	TypeParameter = "<T>",
 }
 
-for k, v in pairs(my_kind) do
-	kind[kind[k]] = v
+M.setup = function()
+	for k, v in pairs(my_kind) do
+		kind[kind[k]] = v
+	end
 end
+
+M.MyKind = my_kind
+
+return M
