@@ -33,8 +33,19 @@ return {
 				end,
 			},
 			window = {
-				completion = cmp.config.window.bordered(),
-				documentation = cmp.config.window.bordered(),
+				completion = cmp.config.window.bordered(
+					{
+						border = "solid",
+						winhighlight = 'FloatBorder:FloatBorder,CursorLine:Visual,Search:None',
+						col_offset = -1,
+					}
+				),
+				documentation = cmp.config.window.bordered(
+					{
+						border = "single",
+						winhighlight = 'FloatBorder:FloatBorder,CursorLine:Visual,Search:None',
+					}
+				),
 			},
 			mapping = cmp.mapping.preset.insert({
 				['<C-b>'] = cmp.mapping.scroll_docs(-4),
@@ -51,7 +62,7 @@ return {
 				{ name = 'path',                   options = { trailing_slash = true } },
 			}),
 			formatting = {
-				format = function (_, vim_item)
+				format = function(_, vim_item)
 					vim_item.menu = ""
 					return vim_item
 				end
