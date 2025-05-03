@@ -12,6 +12,9 @@ a particular plugin or configuration instead.
 
 ## [Unreleased]
 
+### Added
+
+- Plugin: trying out Oil.
 
 ## [0.1.0] - 2025-05-03
 
