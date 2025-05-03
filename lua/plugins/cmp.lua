@@ -15,13 +15,13 @@ return {
 		'hrsh7th/cmp-nvim-lsp-signature-help',
 	},
 	-- >>> Added for lazydev.
-    opts = function(_, opts)
-      opts.sources = opts.sources or {}
-      table.insert(opts.sources, {
-        name = "lazydev",
-        group_index = 0, -- set group index to 0 to skip loading LuaLS completions
-      })
-    end,
+	opts = function(_, opts)
+		opts.sources = opts.sources or {}
+		table.insert(opts.sources, {
+			name = "lazydev",
+			group_index = 0, -- set group index to 0 to skip loading LuaLS completions
+		})
+	end,
 	-- <<< Added for lazydev. [end]
 	config = function()
 		local cmp = require 'cmp'
@@ -50,6 +50,12 @@ return {
 				{ name = 'vsnip' },
 				{ name = 'path',                   options = { trailing_slash = true } },
 			}),
+			formatting = {
+				format = function (_, vim_item)
+					vim_item.menu = ""
+					return vim_item
+				end
+			}
 		})
 
 		-- cmp.setup.cmdline({ '/', '?' }, {
