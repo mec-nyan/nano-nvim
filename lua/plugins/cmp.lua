@@ -46,7 +46,7 @@ return {
 				),
 				documentation = cmp.config.window.bordered(
 					{
-						border = "single",
+						border = "rounded",
 						winhighlight = 'FloatBorder:FloatBorder,CursorLine:Visual,Search:None',
 					}
 				),
@@ -66,9 +66,15 @@ return {
 				{ name = 'path',                   options = { trailing_slash = true } },
 			}),
 			formatting = {
-				format = function(_, vim_item)
+				format = function(entry, vim_item)
 					vim_item.kind = my_kind[vim_item.kind] or vim_item.kind
-					vim_item.menu = ""
+					vim_item.menu = ({
+						buffer = "buf",
+						nvim_lsp = "lsp",
+						path = "/",
+						vsnip = "snp",
+						nvim_lsp_signature_help = "sig",
+					})[entry.source.name]
 					return vim_item
 				end
 			}
