@@ -1,4 +1,5 @@
 return {
+	--[[
 	"hrsh7th/nvim-cmp",
 	-- load cmp on InsertEnter
 	event = "InsertEnter",
@@ -90,4 +91,5 @@ return {
 		-- 	matching = { disallow_symbold_nonprefix_matching = false }
 		-- })
 	end,
+	--]]
 }
