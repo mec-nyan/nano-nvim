@@ -62,6 +62,7 @@ Optional:
     - Dropbar ("Bekaboo/dropbar.nvim")
 - Colorschemes:
     - Tokyonight ("folke/tokyonight.nvim")
+    - Catppuccin ("catppuccin/nvim")
 - Distraction free mode:
     - Zen-mode ("folke/zen-mode.nvim")
 - Utils:
