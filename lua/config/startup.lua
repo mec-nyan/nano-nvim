@@ -52,7 +52,6 @@ local startup = function()
 		local u_ccolumn = vim.api.nvim_get_option_value('colorcolumn', {})
 		local u_number = vim.api.nvim_get_option_value('number', {})
 		local u_relnumber = vim.api.nvim_get_option_value('relativenumber', {})
-		print("cc:", u_ccolumn, "ln:", u_number, "rn:", u_relnumber)
 
 		-- Don't show these on the welcome screen.
 		vim.api.nvim_set_option_value('colorcolumn', '', {})
