@@ -46,6 +46,17 @@ local function toggle_virtual_lines()
 	vim.diagnostic.config({ virtual_lines = not vim.diagnostic.config().virtual_lines })
 end
 
+-- NOTE: Clangd is not formatting my code according to my settings on ".clang-format", so.
+-- TODO: If I can fix that (i.e. via LSP configuration), remove this funcion.
+local function format_file()
+	local ft = vim.bo.filetype
+	if ft == "c" or ft == "cpp" then
+		vim.cmd ":!clang-format -i %"
+	else
+		vim.lsp.buf.format()
+	end
+end
+
 -- TODO: Check that we don't clash with some plugin's keymaps (i.e. lspconfig).
 local keybindings = {
 	normal = {
@@ -197,7 +208,7 @@ local keybindings = {
 		},
 		{
 			key = "<leader>ff",
-			cmd = ":lua vim.lsp.buf.format()<CR>",
+			cmd = format_file,
 			opts = { desc = "Nano::LSP Format" },
 		},
 		{
