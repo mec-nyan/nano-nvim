@@ -13,6 +13,11 @@ return {
 			python = { "flake8", "mypy" },
 		}
 
+		lint.linters.cpplint.args = {
+			"--linelength=100",
+			"--filter=-legal/copyright,readability/alt_tokens,-whitespace/indent"
+		}
+
 		vim.api.nvim_create_autocmd({ "BufReadPost", "BufWritePost", "InsertLeave" }, {
 			callback = function()
 				require "lint".try_lint()
