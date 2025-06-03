@@ -63,32 +63,32 @@ local keybindings = {
 		-- Personal preference:
 		{
 			key = "<C-z>",
-			cmd = ":w<CR>",
+			cmd = "<cmd>w<CR>",
 			opts = { desc = "Nano::Write" },
 		},
 		{
 			key = "<ESC>n",
-			cmd = ":tabnew<CR>",
+			cmd = "<cmd>tabnew<CR>",
 			opts = { desc = "Nano::NewTab" },
 		},
 		{
 			key = "<ESC>q",
-			cmd = ":q<CR>",
+			cmd = "<cmd>q<CR>",
 			opts = { desc = "Nano::Quit" },
 		},
 		{
 			key = "<ESC>Q",
-			cmd = ":qa<CR>",
+			cmd = "<cmd>qa<CR>",
 			opts = { desc = "Nano::QuitAll" },
 		},
 		{
 			key = "<ESC>o",
-			cmd = ":only<CR>",
+			cmd = "<cmd>only<CR>",
 			opts = { desc = "Nano::Only" },
 		},
 		{
 			key = "<ESC>w",
-			cmd = ":tabclose<CR>",
+			cmd = "<cmd>tabclose<CR>",
 			opts = { desc = "Nano::CloseTab" },
 		},
 		-- Navigating windows
@@ -115,23 +115,23 @@ local keybindings = {
 		-- Quickfix
 		{
 			key = "<leader>co",
-			cmd = ":copen<CR>",
+			cmd = "<cmd>copen<CR>",
 			opts = { desc = "Nano::Open QuickFix window" },
 		},
 		{
 			key = "<leader>cc",
-			cmd = ":cclose<CR>",
+			cmd = "<cmd>cclose<CR>",
 			opts = { desc = "Nano::Close QuickFix window" },
 		},
 		-- Diagnostic (i.e. linting)
 		{
 			key = "<leader>cd",
-			cmd = ":lua vim.diagnostic.setqflist()<CR>",
+			cmd = "<cmd>lua vim.diagnostic.setqflist()<CR>",
 			opts = { desc = "Nano::Diagnostics in QF window" },
 		},
 		{
 			key = "<leader>td",
-			cmd = ":lua vim.diagnostic.enable(not vim.diagnostic.is_enabled())<CR>",
+			cmd = "<cmd>lua vim.diagnostic.enable(not vim.diagnostic.is_enabled())<CR>",
 			opts = { desc = "Nano::Toggle diagnostics" },
 		},
 		{
@@ -158,52 +158,52 @@ local keybindings = {
 		-- LSP
 		{
 			key = "K",
-			cmd = ":lua vim.lsp.buf.hover()<CR>",
+			cmd = "<cmd>lua vim.lsp.buf.hover({ border = 'solid', max_width = 80 })<CR>",
 			opts = { desc = "Nano::Hover" },
 		},
 		{
 			key = "<leader>rn",
-			cmd = ":lua vim.lsp.buf.rename()<CR>",
+			cmd = "<cmd>lua vim.lsp.buf.rename()<CR>",
 			opts = { desc = "Nano::LSP Rename" },
 		},
 		{
 			key = "<leader>ca",
-			cmd = ":lua vim.lsp.buf.code_action()<CR>",
+			cmd = "<cmd>lua vim.lsp.buf.code_action()<CR>",
 			opts = { desc = "Nano::LSP Code action" },
 		},
 		{
 			key = "gd",
-			cmd = ":lua vim.lsp.buf.declaration()<CR>",
+			cmd = "<cmd>lua vim.lsp.buf.declaration()<CR>",
 			opts = { desc = "Nano::LSP Declaration" },
 		},
 		{
 			key = "<leader>gd",
-			cmd = ":lua vim.lsp.buf.definition()<CR>",
+			cmd = "<cmd>lua vim.lsp.buf.definition()<CR>",
 			opts = { desc = "Nano::LSP Definition" },
 		},
 		{
 			key = "<leader>gt",
-			cmd = ":lua vim.lsp.buf.type_definition()<CR>",
+			cmd = "<cmd>lua vim.lsp.buf.type_definition()<CR>",
 			opts = { desc = "Nano::LSP Definition" },
 		},
 		{
 			key = "<leader>gI",
-			cmd = ":lua vim.lsp.buf.implementation()<CR>",
+			cmd = "<cmd>lua vim.lsp.buf.implementation()<CR>",
 			opts = { desc = "Nano::LSP Implementation" },
 		},
 		{
 			key = "<leader>gr",
-			cmd = ":lua vim.lsp.buf.references()<CR>",
+			cmd = "<cmd>lua vim.lsp.buf.references()<CR>",
 			opts = { desc = "Nano::LSP References" },
 		},
 		{
 			key = "<leader>ss",
-			cmd = ":lua vim.lsp.buf.document_symbol()<CR>",
+			cmd = "<cmd>lua vim.lsp.buf.document_symbol()<CR>",
 			opts = { desc = "Nano::LSP Symbols" },
 		},
 		{
 			key = "<leader>sh",
-			cmd = ":lua vim.lsp.buf.signature_help()<CR>",
+			cmd = "<cmd>lua vim.lsp.buf.signature_help({ border = 'solid', max_width = 80 })<CR>",
 			opts = { desc = "Nano::LSP Symbols" },
 		},
 		{
@@ -213,22 +213,22 @@ local keybindings = {
 		},
 		{
 			key = "]e",
-			cmd = ":lua vim.diagnostic.open_float()<CR>",
+			cmd = "<cmd>lua vim.diagnostic.open_float({ border = 'solid' })<CR>",
 			opts = { desc = "Nano::Diagnostic Open" },
 		},
 		{
 			key = "]d",
-			cmd = ":lua vim.diagnostic.goto_next()<CR>",
+			cmd = "<cmd>lua vim.diagnostic.goto_next()<CR>",
 			opts = { desc = "Nano::Diagnostic next" },
 		},
 		{
 			key = "[d",
-			cmd = ":lua vim.diagnostic.goto_prev()<CR>",
+			cmd = "<cmd>lua vim.diagnostic.goto_prev()<CR>",
 			opts = { desc = "Nano::Diagnostic previous" },
 		},
 		{
 			key = "<leader>ih",
-			cmd = ":lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({bufnr=0}), {bufnr=0})<CR>",
+			cmd = "<cmd>lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({bufnr=0}), {bufnr=0})<CR>",
 			opts = { desc = "Nano::Toggle inlay hints" },
 		},
 		-- Telescope
@@ -250,12 +250,12 @@ local keybindings = {
 		-- DAP
 		{
 			key = "<leader>d,",
-			cmd = ":DapContinue<CR>",
+			cmd = "<cmd>DapContinue<CR>",
 			opts = { desc = "Nano::Dap Continue" },
 		},
 		{
 			key = "<leader>dt",
-			cmd = ":DapToggleBreakpoint<CR>",
+			cmd = "<cmd>DapToggleBreakpoint<CR>",
 			opts = { desc = "Nano::Dap Toggle Breakpoint" },
 		},
 		{
@@ -265,12 +265,12 @@ local keybindings = {
 		},
 		{
 			key = "<leader>dc",
-			cmd = ":lua require'dap'.clear_breakpoints()<CR>",
+			cmd = "<cmd>lua require'dap'.clear_breakpoints()<CR>",
 			opts = { desc = "Nano::Dap Clear Breakpoints" },
 		},
 		{
 			key = "<leader>dx",
-			cmd = ":DapTerminate<CR>",
+			cmd = "<cmd>DapTerminate<CR>",
 			opts = { desc = "Nano::Dap Terminate" },
 		},
 		{
@@ -280,7 +280,7 @@ local keybindings = {
 		},
 		{
 			key = "<leader>de",
-			cmd = ":DapEval<CR>",
+			cmd = "<cmd>DapEval<CR>",
 			opts = { desc = "Nano::Dap Eval" },
 		},
 		{
@@ -338,18 +338,18 @@ local keybindings = {
 		-- Zen
 		{
 			key = "<leader>zz",
-			cmd = ":ZenMode<CR>",
+			cmd = "<cmd>ZenMode<CR>",
 			opts = { desc = "Nano::Zen mode" },
 		},
 		-- Other
 		{
 			key = "<leader><esc>",
-			cmd = ":nohlsearch<CR>",
+			cmd = "<cmd>nohlsearch<CR>",
 			opts = { desc = "Nano::Clear search" },
 		},
 		{
 			key = "<leader>ss",
-			cmd = ":suspend<CR>",
+			cmd = "<cmd>suspend<CR>",
 			opts = { desc = "Nano::Suspend" },
 		},
 	},
