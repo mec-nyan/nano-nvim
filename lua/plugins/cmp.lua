@@ -1,5 +1,5 @@
 return {
-	--[[
+	---[[
 	"hrsh7th/nvim-cmp",
 	-- load cmp on InsertEnter
 	event = "InsertEnter",
@@ -31,6 +31,9 @@ return {
 		cmp.setup({
 			view = {
 				entries = "custom",
+				docs = {
+					auto_open = false,
+				},
 			},
 			snippet = {
 				expand = function(args)
@@ -42,12 +45,11 @@ return {
 					{
 						border = "solid",
 						winhighlight = 'FloatBorder:FloatBorder,CursorLine:Visual,Search:None',
-						col_offset = -1,
 					}
 				),
 				documentation = cmp.config.window.bordered(
 					{
-						border = "rounded",
+						border = { "╭", "━", "╮", "┃", "╯", "━", "╰", "┃" },
 						winhighlight = 'FloatBorder:FloatBorder,CursorLine:Visual,Search:None',
 					}
 				),
@@ -58,6 +60,15 @@ return {
 				['<C-Space>'] = cmp.mapping.complete(),
 				['<C-e>'] = cmp.mapping.abort(),
 				['<CR>'] = cmp.mapping.confirm({ select = true }),
+				['<C-k>'] = cmp.mapping(function(fallback)
+					if cmp.visible_docs() then
+						cmp.close_docs()
+					elseif cmp.visible() then
+						cmp.open_docs()
+					else
+						fallback()
+					end
+				end)
 			}),
 			sources = cmp.config.sources({
 				{ name = 'nvim_lsp' },

@@ -1,4 +1,5 @@
 return {
+	--[[
 	"saghen/blink.cmp",
 	version = "1.*",
 	dependencies = {
@@ -52,4 +53,5 @@ return {
 	opts_extend = {
 		"sources.default",
 	}
+	--]]
 }

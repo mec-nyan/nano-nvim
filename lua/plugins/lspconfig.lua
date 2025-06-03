@@ -1,11 +1,11 @@
 return {
 	"neovim/nvim-lspconfig",
-	dependencies = {
-		"saghen/blink.cmp",
-	},
+	-- dependencies = {
+	-- 	"saghen/blink.cmp",
+	-- },
 	config = function()
-		-- local cap = require "cmp_nvim_lsp".default_capabilities()
-		local cap = require "blink.cmp".get_lsp_capabilities()
+		local cap = require "cmp_nvim_lsp".default_capabilities()
+		-- local cap = require "blink.cmp".get_lsp_capabilities()
 		local on_attach = function(client, bufnr)
 			if client.server_capabilities.inlayHintProvider then
 				vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
