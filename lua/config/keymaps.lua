@@ -247,6 +247,11 @@ local keybindings = {
 			cmd = "<CMD>Telescope diagnostics<CR>",
 			opts = { desc = "Nano::Diagnostics" },
 		},
+		{
+			key = "<leader>tb",
+			cmd = "<CMD>Telescope buffers<CR>",
+			opts = { desc = "Nano::Buffers" },
+		},
 		-- DAP
 		{
 			key = "<leader>d,",
