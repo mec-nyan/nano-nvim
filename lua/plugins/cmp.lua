@@ -41,18 +41,23 @@ return {
 				end,
 			},
 			window = {
-				completion = cmp.config.window.bordered(
-					{
-						border = "solid",
-						winhighlight = 'FloatBorder:FloatBorder,CursorLine:Visual,Search:None',
-					}
-				),
-				documentation = cmp.config.window.bordered(
-					{
-						border = { "╭", "━", "╮", "┃", "╯", "━", "╰", "┃" },
-						winhighlight = 'FloatBorder:FloatBorder,CursorLine:Visual,Search:None',
-					}
-				),
+				completion = {
+					border = "solid",
+					winhighlight = 'FloatBorder:FloatBorder,CursorLine:Visual,Search:None',
+					scrollbar = true,
+					col_offset = -1,
+					winblend = 20,
+					side_padding = 2,
+				},
+				documentation = {
+					-- border = { "╭", "━", "╮", "┃", "╯", "━", "╰", "┃" },
+					border = "solid",
+					max_width = 60,
+					winhighlight = 'FloatBorder:FloatBorder,CursorLine:Visual,Search:None',
+					scrollbar = true,
+					zindex = 1001,
+					winblend = 20,
+				}
 			},
 			mapping = cmp.mapping.preset.insert({
 				['<C-b>'] = cmp.mapping.scroll_docs(-4),
