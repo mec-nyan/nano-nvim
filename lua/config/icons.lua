@@ -1,7 +1,9 @@
 --- Dignostics configuration.
+local border = { "╭", "━", "╮", "┃", "╯", "━", "╰", "┃" }
+
 
 vim.diagnostic.config({
-	float = { border = 'rounded', source = true },
+	float = { border = "solid", source = true },
 	virtual_text = false,
 	signs = {
 		text = {
