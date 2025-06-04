@@ -1,6 +1,5 @@
 return {
-	dir = "/Users/mariano/Github/window-switcher",
-	-- "mec-nyan/window-switcher",
+	"mec-nyan/window-switcher",
 	config = function ()
 		require"window-switcher".setup{
 			floats = {
