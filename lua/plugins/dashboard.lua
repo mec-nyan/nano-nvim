@@ -11,7 +11,11 @@ return {
 				header = {
 					"",
 					"",
+					"",
+					"",
 					"        N  e  o  V  i  m       ",
+					"",
+					"",
 					"",
 					"       x:             .x       ",
 					"     :Odoc             d0;     ",
@@ -39,28 +43,78 @@ return {
 					"",
 					"",
 					"",
+					"",
 				},
 				center = {
 					{
-						icon = "󰈤 ",
-						-- icon_hl = "group",
-						desc = "Open file",
-						-- desc_hl = 'group',
+						icon = "󰈤   ",
+						desc = "Open file            ",
 						key = 'f',
-						-- key_hl = 'group',
 						key_format = ' [%s]',
 						action = 'Telescope find_files',
 
 					},
 					{
-						icon = " ",
-						desc = "Quit",
+						icon = "󰈤   ",
+						desc = "New file             ",
+						key = 'n',
+						key_format = ' [%s]',
+						action = 'new +only',
+
+					},
+					{
+						icon = "   ",
+						desc = "Live grep            ",
+						key = 'g',
+						key_format = ' [%s]',
+						action = 'Telescope live_grep',
+
+					},
+					{
+						icon = "󰉖   ",
+						desc = "Tree                 ",
+						key = 'e',
+						key_format = ' [%s]',
+						action = 'NvimTreeToggle',
+
+					},
+					{
+						icon = "󰉖   ",
+						desc = "Oil                  ",
+						key = 'o',
+						key_format = ' [%s]',
+						action = 'Oil',
+
+					},
+					{
+						icon = "   ",
+						desc = "Lazy                  ",
+						key = 'l',
+						key_format = ' [%s]',
+						action = 'Lazy',
+
+					},
+					{
+						icon = "   ",
+						desc = "Quit                 ",
 						key = "q",
 						key_format = ' [%s]',
-						action = 'qa',
-					}
+						action = 'qa!',
+					},
+					{
+						-- Spacer
+						desc = "",
+					},
+					{
+						desc = "",
+					},
 				},
-				footer = { 'a footer' },
+				footer = function()
+					local stats = require "lazy".stats()
+					local ms = math.floor(stats.startuptime * 100 + 0.5) / 100
+					return { "🌸 Neovim loaded " .. stats.loaded .. " / " .. stats.count .. " plugins in " .. ms .. "ms" }
+				end,
+				vertical_center = false,
 			}
 		}
 	end
