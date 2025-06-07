@@ -62,6 +62,11 @@ local keybindings = {
 	normal = {
 		-- Personal preference:
 		{
+			key = "<leader><leader>",
+			cmd = "<cmd>Dashboard<CR>",
+			opts = { desc = "Nano::Dashboard" },
+		},
+		{
 			key = "<C-z>",
 			cmd = "<cmd>w<CR>",
 			opts = { desc = "Nano::Write" },
@@ -345,6 +350,12 @@ local keybindings = {
 			key = "<leader>zz",
 			cmd = "<cmd>ZenMode<CR>",
 			opts = { desc = "Nano::Zen mode" },
+		},
+		-- Git
+		{
+			key = "<leader>ng",
+			cmd = "<cmd>Neogit<CR>",
+			opts = { desc = "Nano::Neogit" },
 		},
 		-- Other
 		{
