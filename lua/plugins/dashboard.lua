@@ -63,7 +63,7 @@ return {
 
 					},
 					{
-						icon = "   ",
+						icon = "   ",
 						desc = "Live grep            ",
 						key = 'g',
 						key_format = ' [%s]',
@@ -73,7 +73,7 @@ return {
 					{
 						icon = "󰉖   ",
 						desc = "Tree                 ",
-						key = 'e',
+						key = 't',
 						key_format = ' [%s]',
 						action = 'NvimTreeToggle',
 
@@ -100,6 +100,13 @@ return {
 						key = "q",
 						key_format = ' [%s]',
 						action = 'qa!',
+					},
+					{
+						icon = "   ",
+						desc = "Help                 ",
+						key = "?",
+						key_format = ' [%s]',
+						action = 'vert :h',
 					},
 					{
 						-- Spacer
