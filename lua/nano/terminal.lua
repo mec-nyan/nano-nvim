@@ -43,7 +43,7 @@ local function create_floating_window(opts)
 		col = x_pos,
 		row = y_pos,
 		style = "minimal",
-		border ={ "╭", "━", "╮", "┃", "╯", "━", "╰", "┃" }, 
+		border = { "╭", "━", "╮", "┃", "╯", "━", "╰", "┃" },
 		title = " neovim term 🐉",
 		title_pos = "center",
 		footer = " I 💖 neovim! ",
