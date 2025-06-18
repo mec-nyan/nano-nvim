@@ -8,7 +8,7 @@ return {
 			transparent_background = true,
 			show_end_of_buffer = false,
 			dim_inactive = {
-				enabled = true,
+				enabled = false,
 				shade = "dark",
 				percentage = 2,
 			},
