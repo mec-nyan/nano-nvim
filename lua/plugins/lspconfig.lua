@@ -90,5 +90,9 @@ return {
 		require "lspconfig".pylsp.setup {
 			capabilities = cap,
 		}
+
+		require "lspconfig".ts_ls.setup {
+			capabilities = cap,
+		}
 	end
 }
