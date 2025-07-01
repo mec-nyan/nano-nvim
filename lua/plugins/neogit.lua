@@ -11,7 +11,7 @@ return {
 	config = function()
 		local ng = require "neogit"
 		ng.setup {
-			graph_style = "kitty",
+			graph_style = "unicode",
 		}
 	end
 }
